@@ -1,0 +1,54 @@
+
+$primary: #e96900;
+
+@mixin absolute($t: null, $l: null, $b: null, $r: null) {
+    position: absolute;
+    top: $t;
+    left: $l;
+    bottom: $b;
+    right: $r;
+}
+@mixin flex($ai: center, $jc: center, $fw: nowrap, $fd: row){
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-wrap: $fw;
+    flex-direction: $fd;
+}
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+.cont {
+    width: 1000px;
+    margin: 0 auto;
+    background: #eee;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    border: 1px solid;
+    .slide{
+        float: left;
+        width: 100%;
+        border: 1px solid;
+    }
+}
+
+.view{
+    width: 800px; height: 200px; overflow: hidden;
+    border: 1px solid;
+    .slidelist{
+            width: 500%; height: 200px;
+            transition: 1s;
+            background: #aaa;
+            display: flex;
+        .page{
+            width: 100%; height: 200px; 
+            text-align: center;
+            transition: 1s;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <p class="btn">123</p>
+    <p class="btn2">1212</p>
+
+    <form action="success.html">
+        <div class="my-3">
+            <input type="text" class="form-control">
+        </div>
+        <div class="my-3">
+            <input type="password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">전송</button>
+        <button type="button" class="btn btn-danger" id="close">닫기</button>
+    </form>
+
+
+    
+</body>
+    <script>
+
+        let startbtn = document.getElementsByClassName('btn')[0];
+        startbtn.addEventListener('click', function () {
+            let submit = prompt('', "숫자를 입력하세요");
+            startbtn.innerHTML = submit;
+            console.log('ㅎㅇㅋ');
+        })
+
+
+        let startbtn2 = document.getElementsByClassName('btn2')[0];
+        startbtn2.addEventListener('click', function () {
+            let submit2 = prompt('', "삼으로나눠지는삼육구");
+            if (submit2 % 3 == 0) {
+                startbtn2.innerHTML = '짝';
+                console.log("뭐임마")
+            }
+            else {
+                startbtn2.innerHTML = '통과';
+            }
+        })
+
+        function 합격햇냐(a, b) {
+            if (a + b >= 120 && a >= 40 && b >= 40) {
+                console.log("합격")
+            }
+            else (
+                console.log("부랍격")
+            )
+
+        }
+        합격햇냐(40, 40);
+        합격햇냐(80, 80);
+
+        function PanDock();
+
+
+    </script>
+</html>
