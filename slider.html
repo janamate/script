@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>으앙</title>
+  <link href="/resource/css/slider.css" rel="stylesheet" type="text/css" />
+  <script src="./slider.js" type="module" defer></script>
+  <link rel="stylesheet" href="/resource/css/slider.css">
+  <style>
+    .slider {}
+  </style>
+</head>
+
+<body>
+  <p class="currentnum">여기</p>
+  <div class="view">
+    <div class="slidelist">
+      <div class="page">1</div>
+      <div class="page">2</div>
+      <div class="page">3</div>
+      <div class="page">4</div>
+      <div class="page">5</div>
+    </div>
+  </div>
+  <section class="sect">
+    <div class="cont">
+      <div class="slider">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+        <div class="slide">5</div>
+        <div class="slide">6</div>
+      </div><!-- wrap_slider -->
+      <article class="pagerArea">
+        <div class="inWrap">
+          <button class="btnleft" data-order="prev" title="이전">왼</button>
+          <button class="btnright" data-order="next" title="다음">오</button>
+          <ul class="pager">
+          </ul>
+          <button class="btn_pause" data-order="pause" data-status="moving">PAUSE ME</button>
+        </div>
+      </article><!-- pagerArea -->
+    </div>
+  </section><!-- sect -->
+
+</body>
+  <script>
+    const slidelist = document.querySelector('.slidelist');
+    const slideleft = document.querySelector('.btnleft');
+    const slideright = document.querySelector('.btnright');
+    const nownum = document.querySelector('.currentnum');
+    let slidenum = 1;
+    
+    slideright.addEventListener('click',function(){
+    //slidespeed는 보류
+    if(slidenum < 5){
+      slidenum++;
+    slidelist.style.transform = "translate3d(-"+(800 * (slidenum-1))+"px, 0px, 0px)";
+    nownum.innerHTML = slidenum;
+    }
+    
+    
+    })
+
+    slideleft.addEventListener('click',function(){
+    //slidespeed는 보류
+    if(slidenum > 1){
+    slidenum--;
+    slidelist.style.transform = "translate3d(-"+(800 * (slidenum-1))+"px, 0px, 0px)";
+    nownum.innerHTML = slidenum;
+    }
+    })
+
+  </script>
+</html>
