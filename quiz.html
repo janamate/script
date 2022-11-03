@@ -7,12 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <p>태조 이성계가 태어난 년도는?</p>
+    <p>1335</p>
 <input type="text" id="answer">
 <button id="send-answer">제출</button>
 
 <script>
-    
+    const putbtn = document.getElementById('send-answer');
+    putbtn.addEventListener('click', function(){
+        const youranswer = document.getElementById('answer').value;
+        alert(youranswer);
+
+        if(youranswer == '1335'){
+            alert('yes');
+        }
+    })
 </script>
 </body>
 </html>
