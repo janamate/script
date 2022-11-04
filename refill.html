@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var 예금액 = 60000;
+        var 미래예금액 = 0;
+
+        미래예금액 = 예금액 * 1.20 * 1.20;
+
+        console.log(미래예금액) 
+
+
+        var yegum = 10;
+        var sum = 0;
+
+        sum = (yegum *1.2)**5;
+        console.log(sum);
+        console.log(sum);
+        console.log(sum);
+
+
+
+        setTimeout(function(){
+            console.log('hi');
+        },5000);
+
+
+        var time = 0;
+        setInterval(() => {
+            console.log('hihi');
+            
+            time++;
+            console.log(time);
+        }, 1000);
+
+    </script>
+
+
+    <div class="albino"><span class="timer"></span>초</div>
+    <script>
+        var timer = document.getElementsByClassName('timer')[0];
+        var counter = 5;
+        timer.innerHTML = counter;
+        setInterval(() => {
+            if(counter > 0){
+            counter--;
+            timer.innerHTML = counter;
+            }
+            else{
+                document.getElementsByClassName('albino')[0].style.display='none';
+            }
+        }, 1000);
+        
+    </script>
+</body>
+
+</html>
