@@ -7,23 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="/resource/js/jquery-3.6.1.min.js"></script>
-
+<style>
+    #content {
+        height: 2000px;
+        border: 1px solid;
+    }
+</style>
 </head>
 
 <body>
-    <div id=content>123</div>
+    <div id=content>123
+        <p id="progress"></p>
+    </div>
     <div id=object>here</div>
 </body>
     <script>
-        const visible =  false;
 
-        function check(elm,eval){
-            eval = eval || 'object visibel'
-        }
-
-        window.addEventListener('scroll'.function () {
-            if( )
+        window.addEventListener('scroll',function () {
+            console.log(window.scrollY)
+            var wid = window.scrollY;
+            var hei = document.getElementById('progress').scrollTop;
+            height.style.width = wid;
+            
         })
+
+        document.getElementById('content').addEventListener('scroll', function(){
+            var yang = document.getElementById('content').scrollTop;
+            console.log(yang);
+        })
+        document.getElementById('content').addEventListener('click', function(){
+            console.log('1')
+            window.scrollBy(0,100);
+        })
+
+
+
     </script>
+    
 
 </html>
