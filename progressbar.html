@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{margin: 0;}
+        body{margin: 0; }
         .progress{
             position: fixed;
-            width: 0vw;          
+            width: 0%;          
             overflow: hidden;
             transition: 1s;
         }
         .progress .inner{
-            width: 100vw;
+            width: 100%;
             height: 5px;
             background: linear-gradient(to right, rgb(218, 159, 33), rgb(101, 101, 141));
             animation-name: neon;
             transition: 1s;
         }
         .container{
-            height: 2000px;
+            height: 5000px;
         }
         @keyframes neon {
             0%{background: red;}
@@ -46,17 +46,18 @@
             let randomColor4 = Math.floor(Math.random()*256);
             let randomColor5 = Math.floor(Math.random()*256);
             let randomColor6 = Math.floor(Math.random()*256);
-            document.getElementsByClassName('inner')[0].style.background = 'linear-gradient(to right, rgb('+randomColor+','+randomColor2+','+randomColor3+'), rgb('+randomColor4+','+ randomColor5+','+randomColor6+')'
+            let deg = Math.floor(Math.random()*361);
+            document.getElementsByClassName('inner')[0].style.background = 'linear-gradient('+deg+'deg, rgb('+randomColor+','+randomColor2+','+randomColor3+'), rgb('+randomColor4+','+ randomColor5+','+randomColor6+')'
             document.querySelector('.container').innerHTML = randomColor;
         }, 2000);
         window.addEventListener('scroll',function scrogress() {
-            let nowheight = document.getElementsByClassName('container')[0].clientHeight;
-             
-            let scwid = ((window.scrollY+window.innerHeight) / nowheight)*100;
-            document.getElementsByClassName('progress')[0].style = 'width :'+scwid+'vw';
+            let nowheight = document.body.clientHeight;
+            let current = document.body.scrollHeight;
+            let scwid = ((window.scrollY) / nowheight)*100;
+            document.getElementsByClassName('progress')[0].style = 'width :'+scwid+'%';
             // console.log(scwid);
             console.log((window.scrollY+window.innerHeight));
-            console.log(nowheight);
+            console.log(current);
 
         })
     </script>
