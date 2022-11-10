@@ -51,9 +51,13 @@
         }, 2000);
         window.addEventListener('scroll',function scrogress() {
             let nowheight = document.getElementsByClassName('container')[0].clientHeight;
-            let scwid = (window.scrollY / nowheight)*100;
+             
+            let scwid = ((window.scrollY+window.innerHeight) / nowheight)*100;
             document.getElementsByClassName('progress')[0].style = 'width :'+scwid+'vw';
-            console.log(scwid);
+            // console.log(scwid);
+            console.log((window.scrollY+window.innerHeight));
+            console.log(nowheight);
+
         })
     </script>
 </body>
