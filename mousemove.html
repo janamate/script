@@ -11,14 +11,15 @@
             margin: 0;
         }
 
-        .darkness {
-            position: absolute;
+        /* .darkness {
+            position: fixed;
+            top: 0;
             width: 100vw;
-            height: 100vw;
+            height: 100vh;
             background: #000;
-            opacity: 0.8;
-        }
-        .light {
+            opacity: 0.1;
+        } */
+        /* .light {
             position: absolute;
             top: 0;
             left: 0;
@@ -28,15 +29,16 @@
             border-radius: 50%;
             background-color: white;
             opacity: 0.5;
-        }
-
+        } */
+        body {background: #000; }
+        section{background-color: #fff;}
         #wrap {}
     </style>
 </head>
 
 <body>
     <div id="wrap">
-        <p class="coord" style="text-align: center" ;>123</p>
+        <!-- <p class="coord" style="text-align: center" ;>123</p> -->
         <div class="darkness">
         </div>
         <div class="light"></div>
@@ -45,16 +47,17 @@
         </section>
     </div>
     <script>
+        
         const mousetarget = document.getElementsByClassName('light')[0]
+        const dark = document.getElementsByClassName('darkness')[0]
         const currentcoord = document.getElementsByClassName('coord')[0]
         document.addEventListener('mousemove', function (e) {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
             
-            mousetarget.style.top = mouseY + 'px';
-            mousetarget.style.left = mouseX + 'px';
+            document.querySelector('section').style.clipPath = "circle(100px at "+mouseX+"px "+mouseY+"px)" 
 
-            currentcoord.innerHTML = (mouseX+','+mouseY)
+            // currentcoord.innerHTML = (mouseX+','+mouseY)
             console.log(mouseX, mouseY)
         })
 
