@@ -5,20 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      .viewer{
+        width: 50%;
+        border: 1px solid;
+      }
+      .slide-container{
+        width: 300%;
+        height: 300px;
+        display: flex;
+        transform: translate3d(-50px,0,0);
+        
+      }
+      .slide-box{
+        width: 100%;
+        background: #bbb;
+      }
+    </style>
 </head>
 <body>
-    <div style="overflow: hidden">
+    <div class="viewer" style="overflow: hidden">
         <div class="slide-container">
-          <div class="slide-box">
-            <img src="car1.png">
+          <div class="slide-box" style="background: #ccbbaa">
+            <!-- <img src="car1.png"> -->
           </div>
-          <div class="slide-box">
-            <img src="car2.png">
+          <div class="slide-box" style="background: #778899">
+            <!-- <img src="car2.png"> -->
           </div>
-          <div class="slide-box">
-            <img src="car3.png">
+          <div class="slide-box" style="background: #ffcc55">
+            <!-- <img src="car3.png"> -->
           </div>
         </div>
     </div> 
+    <script>
+      let startP = 0;
+      let dragon = false;  
+      document.querySelector('.slide-container').addEventListener('mousedown',function(){
+        console.log('mousedown')
+        document.addEventListener('mousemove',function(e){
+          const mouseX = e.clientX;
+          console.log(mouseX)
+          let mouseon = true;
+          document.addEventListener('mouseup',function(e){
+            e.preventDefault;
+          })
+        })
+      })
+      document.querySelector('.slide-container').addEventListener('mouseup',function(){
+        console.log('mouseup')
+        e.preventdefault;
+      })
+
+    </script>
 </body>
 </html>
