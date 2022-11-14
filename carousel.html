@@ -1,61 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-      .viewer{
-        width: 50%;
-        border: 1px solid;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .viewer {
+      width: 50%;
+      border: 1px solid;
+    }
+
+    .slide-container {
+      width: 300%;
+      height: 300px;
+      display: flex;
+      transform: translate3d(-0%, 0, 0);
+
+    }
+
+    .slide-box {
+      width: 100%;
+      background: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+  <p>drag</p>
+  <div class="viewer" style="overflow: hidden">
+    <div class="slide-container">
+      <div class="slide-box" style="background: #ccbbaa">
+        <!-- <img src="car1.png"> -->
+      </div>
+      <div class="slide-box" style="background: #778899">
+        <!-- <img src="car2.png"> -->
+      </div>
+      <div class="slide-box" style="background: #ffcc55">
+        <!-- <img src="car3.png"> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    let startX = 0;
+    let dragon = false;
+    document.querySelector('.slide-container').addEventListener('mousedown', function (e) {
+      dragon = true;
+      startX = e.clientX 
+      if (dragon == true) {
+        //드래그중일때 이동
       }
-      .slide-container{
-        width: 300%;
-        height: 300px;
-        display: flex;
-        transform: translate3d(-50px,0,0);
+      console.log('mousedown')
+    })
+    document.addEventListener('mousemove', function (e) {
+      if (dragon == true) {
+        
+        mouseX = e.clientX - startX;
+        // document.getElementsByClassName('slide-box')[0].style.background = 'red'
+        document.getElementsByClassName('slide-container')[0].style.transform = 'translate3d('+ mouseX +'px, 0, 0)'
+        console.log(mouseX)
+        document.querySelector('p').innerHTML = e.clientX;
+      }
+    })
+    document.addEventListener('mouseup', function () {
+      dragon = false;
+      console.log('mouseup')
+      if(mouseX >= 100){
         
       }
-      .slide-box{
-        width: 100%;
-        background: #bbb;
-      }
-    </style>
-</head>
-<body>
-    <div class="viewer" style="overflow: hidden">
-        <div class="slide-container">
-          <div class="slide-box" style="background: #ccbbaa">
-            <!-- <img src="car1.png"> -->
-          </div>
-          <div class="slide-box" style="background: #778899">
-            <!-- <img src="car2.png"> -->
-          </div>
-          <div class="slide-box" style="background: #ffcc55">
-            <!-- <img src="car3.png"> -->
-          </div>
-        </div>
-    </div> 
-    <script>
-      let startP = 0;
-      let dragon = false;  
-      document.querySelector('.slide-container').addEventListener('mousedown',function(){
-        console.log('mousedown')
-        document.addEventListener('mousemove',function(e){
-          const mouseX = e.clientX;
-          console.log(mouseX)
-          let mouseon = true;
-          document.addEventListener('mouseup',function(e){
-            e.preventDefault;
-          })
-        })
-      })
-      document.querySelector('.slide-container').addEventListener('mouseup',function(){
-        console.log('mouseup')
-        e.preventdefault;
-      })
-
-    </script>
+    })
+  </script>
+  transform: translate3d(-50px, 0, 0);
 </body>
+
 </html>
