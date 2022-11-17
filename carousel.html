@@ -29,6 +29,9 @@
 
 <body>
   <p>drag</p>
+  <p>page</p>
+  <button class="left">&lt;</button>
+  <button class="right">&gt;</button>
   <div class="viewer" style="overflow: hidden">
     <div class="slide-container">
       <div class="slide-box" style="background: #ccbbaa">
@@ -43,6 +46,15 @@
     </div>
   </div>
   <script>
+    let pagenum = 1;
+    document.querySelectorAll('p')[1].innerHTML = pagenum;
+    document.getElementsByClassName('left')[0].addEventListener('click',function(){
+      document.getElementsByClassName('slide-container')[0].style.transform = 'translate3d(-30%, 0, 0)'
+    })
+
+
+
+
     let startX = 0;
     let dragon = false;
     document.querySelector('.slide-container').addEventListener('mousedown', function (e) {
@@ -61,7 +73,7 @@
         // document.getElementsByClassName('slide-box')[0].style.background = 'red'
         document.getElementsByClassName('slide-container')[0].style.transform = 'translate3d('+ mouseX +'px, 0, 0)'
         console.log(mouseX)
-        document.querySelector('p').innerHTML = e.clientX;
+        document.querySelectorAll('p')[0].innerHTML = e.clientX;
       }
     })
     document.addEventListener('mouseup', function () {
