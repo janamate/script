@@ -45,9 +45,13 @@
     .col-4 {
         @include col(33.33%);
     }
-    
+
 }
-
-
-
-@mixin box() {}
+@mixin absolute($t,$b,$l,$r){
+    position: absolute;
+    top: $t;
+    bottom: $b;
+    left: $l;
+    right: $r;
+    background: #ffd700
+}
