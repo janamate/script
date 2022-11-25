@@ -1,12 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .outer_hover {
+            width: 100%;
+            padding: 16px;
+            border-spacing: 0px;
+            background: #878787;
+            color: #fff;
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .outer_hover th {
+            padding: 5px;
+            font-size: 14px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .outer_hover td {
+            font-weight: 500;
+            padding: 4px 10px;
+            font-size: 12px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .outer_hover tbody tr:first-of-type td {
+            border-bottom: 1px solid #a5a5a5
+        }
+
+        @media screen and (max-width: 1024px) {
+            .outer_hover {
+                display: flex;
+                width: 100%;
+                border-spacing: 0px;
+                background: #878787;
+                color: #fff;
+                border-radius: 8px;
+                z-index: 1;
+            }
+
+            .outer_hover th {
+                font-size: 10px;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .outer_hover td {
+                font-weight: 500;
+                font-size: 10px;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .outer_hover thead tr {
+                display: grid;
+                width: 15vw;
+            }
+
+            .outer_hover tbody {
+                display: flex;
+            }
+
+            .outer_hover tbody tr {
+                display: grid;
+                width: 35vw;
+            }
+
+            .outer_hover tbody tr:first-of-type td {
+                border-bottom: none;
+                border-right: 1px solid #a5a5a5
+            }
+
+
+        }
+    </style>
 </head>
+
 <body>
-    
+    <table class="outer_hover">
+        <colgroup>
+            <col style="width: 16.66%;">
+            <col style="width: 16.66%;">
+            <col style="width: 16.66%;">
+            <col style="width: 16.66%;">
+            <col style="width: 16.66%;">
+            <col style="width: 16.66%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="col">th1</th>
+                <th scope="col">th2</th>
+                <th scope="col">th3</th>
+                <th scope="col">th4</th>
+                <th scope="col">th5</th>
+                <th scope="col">th6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2022.6.20</td>
+                <td>ISO14001 소개</td>
+                <td>본사 업무 대상 조직별 구성원</td>
+                <td>SK네트웍스 본사</td>
+                <td>환경경영시스템 이해</td>
+                <td>환경경영 인증 소개 및 설명</td>
+            </tr>
+            <tr>
+                <td>2022.7.28</td>
+                <td>ISO14001 내부심사원 교육</td>
+                <td>ISO14001 내부심사원</td>
+                <td>온라인 교육 실시</td>
+                <td>환경경영시스템 시행 및 성과 공유</td>
+                <td>ISO14001 기획/운영/성과 결과 공유</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>
